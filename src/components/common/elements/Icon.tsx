@@ -40,14 +40,12 @@ const Icon = ({
   // Placeholder
   return (
     <div
-      className="flex items-center justify-center"
+      className="bg-blue-500 bg-opacity-10 rounded-full"
       style={{
         height: `${size}px`,
         width: `${size}px`,
       }}
-    >
-      ??
-    </div>
+    />
   );
 };
 
