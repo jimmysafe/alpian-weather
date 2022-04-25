@@ -10,6 +10,7 @@ import ForecastList from "./components/forecast/ForecastList";
 import LocationHeader from "../../components/common/extensive/LocationHeader";
 import ReloadButton from "../../components/common/extensive/ReloadButton";
 import Loading from "../../components/common/generic/Loading";
+import Error from "../../components/common/generic/Error";
 
 const HomePage = () => {
   const { setSelectedForecast } = useWeatherContext();
@@ -19,12 +20,14 @@ const HomePage = () => {
     refetch: refetchCurrent,
     isFetching: isFetchingCurrent,
     isLoading: isLoadingCurrent,
+    error: currentError,
   } = useGetCurrentWeather();
   const {
     data: forecastData,
     refetch: refetchForecast,
     isFetching: isFetchingForecast,
     isLoading: isLoadingForecast,
+    error: forecastError,
   } = useGetForecast();
 
   useEffect(() => {
@@ -34,6 +37,9 @@ const HomePage = () => {
       setSelectedForecast(formattedData[0]);
     }
   }, [forecastData]);
+
+  if (forecastError || currentError)
+    return <Error error={forecastError || currentError} />;
 
   if (
     !currentWeather ||
