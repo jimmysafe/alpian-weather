@@ -1,4 +1,4 @@
-import { HttpClient } from "../client";
+import { HttpClient } from "./client";
 
 /**
  * Weather API is protected by CORS Policy.

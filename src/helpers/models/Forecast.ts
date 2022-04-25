@@ -14,7 +14,7 @@ export interface IForecastItem {
     deg: number;
     gust: number;
   };
-  dt: number;
+  dt_txt: string;
 }
 
 export interface IForecastData {

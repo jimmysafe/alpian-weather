@@ -1,12 +1,23 @@
 import { QueryClient, QueryClientProvider } from "react-query";
-import WeatherApp from "./components/WeatherApp";
+import WeatherProvider from "./context/weather.provider";
+import HomePage from "./pages/home/home.page";
 
-const client = new QueryClient();
+const client = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: false,
+      retry: false,
+    },
+  },
+});
 
 const App = () => {
   return (
     <QueryClientProvider client={client}>
-      <WeatherApp />
+      <WeatherProvider>
+        <HomePage />
+      </WeatherProvider>
     </QueryClientProvider>
   );
 };
