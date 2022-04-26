@@ -41,7 +41,7 @@ const Icon = ({
   // Placeholder
   return (
     <div
-      className="bg-blue-500 bg-opacity-10 rounded-full"
+      className={`bg-blue-500 bg-opacity-10 rounded-full ${className}`}
       style={{
         height: `${size}px`,
         width: `${size}px`,

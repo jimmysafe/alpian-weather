@@ -30,13 +30,20 @@ const HomePage = () => {
     error: forecastError,
   } = useGetForecast();
 
+  const refetch = () => {
+    refetchCurrent();
+    refetchForecast();
+    localStorage.setItem("lastUpdate", JSON.stringify(new Date()));
+  };
+
   useEffect(() => {
     if (forecastData?.data && forecastData.data.list.length > 0) {
       const formattedData = formatForecastData(forecastData.data.list);
       setForecasts(formattedData);
       setSelectedForecast(formattedData[0]);
+      localStorage.setItem("lastUpdate", JSON.stringify(new Date()));
     }
-  }, [forecastData]);
+  }, [forecastData, setSelectedForecast]);
 
   if (forecastError || currentError)
     return <Error error={forecastError || currentError} />;
@@ -54,12 +61,7 @@ const HomePage = () => {
     <main className="py-14 px-2">
       <Container className="lg:w-[65%] md:w-full">
         <LocationHeader location={currentWeather.data.name} />
-        <ReloadButton
-          onReload={() => {
-            refetchCurrent();
-            refetchForecast();
-          }}
-        />
+        <ReloadButton onReload={refetch} />
         <main className="flex md:flex-row flex-col items-start justify-center lg:gap-10 md:gap-4">
           <div className="md:w-1/3 w-full">
             <CurrentWeatherCard data={currentWeather.data} />

@@ -7,6 +7,7 @@ type ButtonProps = {
   iconName?: string;
   iconClassName?: string;
   className?: string;
+  disabled?: boolean;
 };
 
 const Button = ({
@@ -15,12 +16,14 @@ const Button = ({
   iconName,
   className,
   iconClassName,
+  disabled,
 }: ButtonProps) => {
   return (
     <button
+      disabled={disabled}
       role="button"
       onClick={onClick}
-      className={`flex justify-between items-center ${className}`}
+      className={`flex justify-between items-center disabled:opacity-25 ${className}`}
     >
       {iconName && (
         <Icon
