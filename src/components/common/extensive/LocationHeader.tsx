@@ -13,7 +13,9 @@ const LocationHeader = ({ location }: LocationHeaderProps) => {
         size={20}
         className="text-gray-400 mr-1"
       />
-      <h1 className="text-gray-400">{location}</h1>
+      <h1 role="location" className="text-gray-400">
+        {location}
+      </h1>
     </div>
   );
 };

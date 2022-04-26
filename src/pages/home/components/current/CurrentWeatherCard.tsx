@@ -19,6 +19,7 @@ const CurrentWeatherCard = ({ data }: CurrentWeatherCardProps) => {
           name={`weather/${data.weather[0].icon}`}
           size={130}
           accessibilityText={data.weather[0].description}
+          className="my-4"
         />
         <p className="text-5xl text-center">{Math.round(data.main.temp)}ºC</p>
       </div>

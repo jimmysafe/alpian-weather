@@ -12,6 +12,7 @@ const Day = ({ forecast }: DayProps) => {
 
   return (
     <button
+      role="day"
       className="w-1/6 aspect-square p-1"
       onClick={() => setSelectedForecast(forecast)}
     >

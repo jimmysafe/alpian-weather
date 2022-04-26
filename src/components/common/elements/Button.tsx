@@ -18,6 +18,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
+      role="button"
       onClick={onClick}
       className={`flex justify-between items-center ${className}`}
     >

@@ -27,6 +27,7 @@ const Icon = ({
   if (path)
     return (
       <SVG
+        role="icon"
         src={path}
         height={size}
         width={size}
