@@ -56,7 +56,7 @@ function HomePage() {
 		isFetchingForecast
 	)
 		return <Loading />;
-
+	console.log('test husky');
 	return (
 		<main className="py-14 px-2">
 			<Container className="lg:w-[65%] md:w-full">
