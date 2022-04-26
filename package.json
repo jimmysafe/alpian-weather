@@ -30,7 +30,8 @@
 		"eject": "react-scripts eject",
 		"lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix",
 		"format": "prettier --write \"*.{ts,tsx,js,jsx}\" \"src/**/*.{ts,tsx,js,jsx}\"",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"husky-create:pre-commit": "npx husky add ./.husky/pre-commit \"npx lint-staged\""
 	},
 	"eslintConfig": {
 		"extends": [
