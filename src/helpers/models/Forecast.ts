@@ -1,32 +1,32 @@
-import { IWeatherItem } from "./Weather";
+import { IWeatherItem } from './Weather';
 
 export interface IForecastItem {
-  weather: IWeatherItem[];
-  main: {
-    temp: number;
-    temp_min: number;
-    temp_max: number;
-    pressure: number;
-    humidity: number;
-  };
-  wind: {
-    speed: number;
-    deg: number;
-    gust: number;
-  };
-  dt_txt: string;
+	weather: IWeatherItem[];
+	main: {
+		temp: number;
+		temp_min: number;
+		temp_max: number;
+		pressure: number;
+		humidity: number;
+	};
+	wind: {
+		speed: number;
+		deg: number;
+		gust: number;
+	};
+	dt_txt: string;
 }
 
 export interface IForecastData {
-  city: {
-    coord: {
-      lon: number;
-      lat: number;
-    };
-    country: string;
-    timezone: number;
-    id: number;
-    name: string;
-  };
-  list: IForecastItem[];
+	city: {
+		coord: {
+			lon: number;
+			lat: number;
+		};
+		country: string;
+		timezone: number;
+		id: number;
+		name: string;
+	};
+	list: IForecastItem[];
 }

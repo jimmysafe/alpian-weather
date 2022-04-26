@@ -1,16 +1,16 @@
-import Icon from "../elements/Icon";
+import Icon from '../elements/Icon';
 
-const Loading = () => {
-  return (
-    <div className="h-screen w-screen flex justify-center items-center z-10">
-      <Icon
-        name="loading"
-        accessibilityText="Loading"
-        size={50}
-        className="text-blue-500"
-      />
-    </div>
-  );
-};
+function Loading() {
+	return (
+		<div className="h-screen w-screen flex justify-center items-center z-10">
+			<Icon
+				name="loading"
+				accessibilityText="Loading"
+				size={50}
+				className="text-blue-500"
+			/>
+		</div>
+	);
+}
 
 export default Loading;
